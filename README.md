@@ -19,15 +19,15 @@
  
     - forward_list Forward list (class template)
 
-        - list List (class template)
+    - list List (class template)
 
-Container adaptors:
-stack	LIFO stack (class template)
-queue	FIFO queue (class template)
-priority_queue	Priority queue (class template)
+- **Container adaptors:**
+    - stack	LIFO stack (class template)
+    - queue	FIFO queue (class template)
+    - priority_queue Priority queue (class template)
 
-Associative containers:
-set	Set (class template)
-multiset	Multiple-key set (class template)
-map	Map (class template)
-multimap	Multiple-key map (class template)
+- **Associative containers:**
+    - set Set (class template)
+    - multiset Multiple-key set (class template)
+    - map Map (class template)
+    - multimap Multiple-key map (class template)
