@@ -11,15 +11,15 @@
 
 -**Sequence containers**:
 
-    -array	Array class (class template)
+    - array	Array class (class template)
 
-    -vector	Vector (class template)
+    - vector Vector (class template)
+ 
+    - deque	Double ended queue (class template)
+ 
+    - forward_list Forward list (class template)
 
-    -deque	Double ended queue (class template)
-
-    -forward_list	Forward list (class template)
-
-        -list	List (class template)
+        - list List (class template)
 
 Container adaptors:
 stack	LIFO stack (class template)
