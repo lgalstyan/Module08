@@ -6,6 +6,43 @@
 #define GREEN   "\x1B[32m"
 #define RED		"\033[31m"
 
+#include <iostream> 
+#include <vector> 
+#include <exception> 
+
 class Span
+{
+    public:
+        Span();
+        Span(const Span& );
+        Span& operator=(const Span& );
+        Span(unsigned int );
+        ~Span();
+        void addNumber(int);
+        int shortestSpan();
+        int longestSpan();
+    
+    private:
+        std::vector<int> _vector;
+
+        class AlreadyFullException : public std::exception
+        {
+            public:
+                const char * what() const throw()
+                {
+                    return ("Exception: There is no space to add an element!");
+                }
+        };
+
+        class EmptySpanException : public std::exception
+        {
+            public:
+                const char * what() const throw()
+                {
+                    return ("Exception: empty, no elements found!");
+                }
+        };
+
+};
 
 #endif
