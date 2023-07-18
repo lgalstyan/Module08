@@ -8,6 +8,7 @@
 
 #include <iostream> 
 #include <vector> 
+#include <algorithm> 
 #include <exception> 
 
 class Span
@@ -23,7 +24,8 @@ class Span
         int longestSpan();
     
     private:
-        std::vector<int> _vector;
+        std::vector<int> _vecSpan;
+        unsigned int _size;
 
         class AlreadyFullException : public std::exception
         {
