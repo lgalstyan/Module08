@@ -22,6 +22,8 @@ class Span
         void addNumber(int);
         int shortestSpan();
         int longestSpan();
+        // my functions
+        bool find(int ) const;
     
     private:
         std::vector<int> _vecSpan;

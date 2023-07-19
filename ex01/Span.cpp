@@ -51,13 +51,11 @@ int Span::longestSpan()
 {
     if (_size == 0 || _vecSpan.size() == 0)
         throw EmptySpanException();
-    std::cout << *(_vecSpan.end()  - 1) << " " << *_vecSpan.begin()<< std::endl;
     sort(_vecSpan.begin(), _vecSpan.end());
-    //deleted
-    for (unsigned int i = 0; i < _vecSpan.size(); ++i) {
-        std::cout << _vecSpan[i] << " ";
-    }
-    //deleted
-    std::cout << std::endl <<*_vecSpan.end() << " " << *_vecSpan.begin()<< std::endl;
-    return *(_vecSpan.end() - 1)  - *_vecSpan.begin();
+    return *(_vecSpan.end() - 1)  - *(_vecSpan.begin());
+}
+
+bool Span::find(int number) const
+{
+    return std::find(_vecSpan.begin(), _vecSpan.end(), number) != _vecSpan.end();
 }
