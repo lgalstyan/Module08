@@ -11,9 +11,9 @@ int main() {
     sp.addNumber(9);
     sp.addNumber(11);
     // sp.shortestSpan();
-    std::cout << sp.shortestSpan() << std::endl;
+    // std::cout << sp.shortestSpan() << std::endl;
     // std::cout << sp_empty.shortestSpan() << std::endl;
-    // std::cout << sp.longestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
   }
   catch(const std::exception& e)
   {
