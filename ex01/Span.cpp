@@ -19,10 +19,7 @@ Span& Span::operator=(const Span& rhs)
 
 Span::~Span() {}
 
-Span::Span(unsigned int N) : _size(N)
-{
-
-}
+Span::Span(unsigned int N) : _size(N) {}
 
 void Span::addNumber(int elem)
 {
@@ -35,17 +32,33 @@ int Span::shortestSpan()
 {
     if (_size == 0 || _vecSpan.size() == 0)
         throw EmptySpanException();
-    sort(_vecSpan.begin(), _vecSpan.end());
-    std::vector<int>::iterator it1 = _vecSpan.begin();
-    std::vector<int>::iterator it2 = it1;
-    int res = it2 - it1;
-    ++it2;
-    for (; it1 != _vecSpan.end(); ++it1, ++it2)
-    {
-        if (it2 - it1 < res)
-            res = it2 - it1;
+    // //deleted
+    // for (unsigned int i = 0; i < _vecSpan.size(); ++i) {
+    //     std::cout << _vecSpan[i] << " ";
+    // }
+    // //deleted
+    std::sort(_vecSpan.begin(), _vecSpan.end());
+    // std::cout << std::endl << " sorted "<< std::endl;
+    //deleted
+    for (unsigned int i = 0; i < _vecSpan.size(); ++i) {
+        std::cout << _vecSpan[i] << " ";
     }
-    std::cout << res;
+    std::cout << std::endl;
+    //deleted
+    std::vector<int>::iterator it1 = _vecSpan.begin();
+    std::vector<int>::iterator it2 = it1 + 1;
+    int res = *it2 - *it1;
+    std::cout << "res = " << res << std::endl;
+    for (; it2 != _vecSpan.end() - 1; ++it1, ++it2)
+    {
+        std::cout << "it1 = " << *it1 << " it2 = " << *it2 << std::endl;
+        if (*it2 - *it1 < res)
+        {
+            res = *it2 - *it1;
+        }
+    std::cout << "res = " << res << std::endl;
+    }
+    // std::cout << res;
     return (res);
 }
 
@@ -54,10 +67,10 @@ int Span::longestSpan()
     if (_size == 0 || _vecSpan.size() == 0)
         throw EmptySpanException();
     sort(_vecSpan.begin(), _vecSpan.end());
-    //deleted
-    for (unsigned int i = 0; i < _vecSpan.size(); ++i) {
-        std::cout << _vecSpan[i] << " ";
-    }
-    //deleted
+    // //deleted
+    // for (unsigned int i = 0; i < _vecSpan.size(); ++i) {
+    //     std::cout << _vecSpan[i] << " ";
+    // }
+    // //deleted
     return _vecSpan.end() - _vecSpan.begin();
 }

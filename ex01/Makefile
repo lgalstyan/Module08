@@ -1,17 +1,17 @@
 NAME    = span
 SRCS    = $(shell find . -name "*.cpp")
 OBJS 	= ${SRCS:.cpp=.o}
-FLAGS   = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS   = -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
-CC      = c++
+CXX      = c++
   
 %.o: %.cpp %.hpp Makefile
-	@$(CC) ${FLAGS} -I. -c $< -o $@
+	@$(CXX) ${CXXFLAGS} -I. -c $< -o $@
 
 all:	${NAME}
 
 $(NAME):	$(OBJS)
-	@$(CC) $(OBJS) $(FLAGS) -o $(NAME)
+	@$(CXX) $(OBJS) $(CXXFLAGS) -o $(NAME)
 
 clean:
 	@${RM} ${OBJS}
