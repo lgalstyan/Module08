@@ -3,38 +3,39 @@
 
 #include <iostream>
 #include <stack>
+#include <deque>
 
-template <typename T, typename  Cont>
-class MutantStack : public std::stack<T, Cont>
+template <typename T, class Container = std::deque< T > >
+class MutantStack : public std::stack<T, Container>
 {
     public:
-        MutantStack() : std::stack<T, Cont> {}
-        MutantStack<T, Cont>(const MutantStack<T, Cont>& other)
+        typedef typename Container::iterator iterator;
+        typedef typename Container::iterator const_iterator;
+        // MutantStack() : std::stack<T, Container>() {} 
+        MutantStack() {} 
+        MutantStack<T, Container>(const MutantStack<T, Container>& other)
         {
             *this = other;
         }
-        MutantStack<T, Cont>& operator=(const MutantStack<T, Cont>& rhs)
+        MutantStack<T, Container>& operator=(const MutantStack<T, Container>& rhs)
         {
             if (this != &rhs)
                 this->c = rhs.c;
             return (*this);
         }
-        ~MutantStack<T, Cont>(){}
-        typedef typename std::stack<T, Cont>::container_type::iterator iter;
-        typedef typename std::stack<T, Cont>::container_type::iterator const_iter;
-        iter begin()
+        iterator begin()
         {
             return this->c.begin();
         }
-        iter end()
+        iterator end()
         {
             return this->c.end();
         }
-        const_iter begin() const
+        const_iterator begin() const
         {
             return this->c.begin();
         }
-        const_iter end() const
+        const_iterator end() const
         {
             return this->c.end();
         }
