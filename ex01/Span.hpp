@@ -9,7 +9,7 @@
 #include <iostream> 
 #include <vector> 
 #include <algorithm> 
-#include <exception> 
+#include <exception>
 
 class Span
 {
@@ -22,6 +22,13 @@ class Span
         void addNumber(int);
         int shortestSpan();
         int longestSpan();
+        template <typename T> void addNumber(T begin , T end)
+        {
+            for (T tmp = begin; tmp != end; ++tmp)
+            {
+                _vecSpan.push_back(*tmp);
+            }   
+        }
         // my functions
         bool find(int ) const;
     

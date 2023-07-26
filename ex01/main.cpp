@@ -58,5 +58,22 @@ int main()
   {
     std::cerr << RED << e.what() << RESET << '\n';
   }
-  
-return 0; }
+  try
+  {
+    std::cout << GREEN << "-----------------Test4-----------------\n" << RESET;
+    Span vect = Span(10);
+    int arr[10] = {1, 2, 3, 4, 5};
+
+    vect.addNumber(arr, arr + sizeof(arr)/sizeof(int));
+
+    std::cout << BLUE << "The shortest span is ";
+    std::cout << GREEN << vect.shortestSpan() << std::endl << RESET;
+    std::cout << BLUE << "The longest span is ";
+    std::cout << GREEN << vect.longestSpan() << std::endl << RESET;
+  }
+  catch(const std::exception& e)
+  {
+    std::cerr << RED << e.what() << RESET << '\n';
+  }
+  return 0;
+}

@@ -25,7 +25,7 @@ int main()
         }
         std::stack<int> s(mstack);
     }
-    
+
     std::cout << GREEN << "-----------------My first test---------------\n" << RESET;
     {
         int multiply = 10;
@@ -62,7 +62,8 @@ int main()
         doubleStack.push(0.577);
 
         std::cout << "Stack elements using const_iterator: ";
-        for (MutantStack<double>::const_iterator cit = doubleStack.begin(); cit != doubleStack.end(); ++cit) {
+        for (MutantStack<double>::const_iterator cit = doubleStack.begin(); cit != doubleStack.end(); ++cit)
+        {
             std::cout << *cit << " "; 
         }
         std::cout << std::endl;
